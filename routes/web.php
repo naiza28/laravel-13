@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\QuestionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,11 +19,11 @@ Route::get('/mahasiswa', function () {
 });
 
 Route::get('/nama/{param1}', function ($param1) {
-    return 'Nama saya: '.$param1;
+    return 'Nama saya: ' . $param1;
 });
 
 Route::get('/nim/{param1?}', function ($param1 = '') {
-    return 'NIM saya: '.$param1;
+    return 'NIM saya: ' . $param1;
 });
 
 Route::get('/mahsiswa', function () {
@@ -40,3 +41,6 @@ Route::get('/matakuliah/show/{kode?}', [MatakuliahController::class, 'show']);
 Route::resource('matakuliah', MatakuliahController::class);
 
 Route::get('/home', [HomeController::class, 'index']);
+
+Route::post('question/store', [QuestionController::class, 'store'])
+    ->name('question.store');
