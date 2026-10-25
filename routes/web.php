@@ -40,7 +40,7 @@ Route::get('/matakuliah/show/{kode?}', [MatakuliahController::class, 'show']);
 
 Route::resource('matakuliah', MatakuliahController::class);
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::post('question/store', [QuestionController::class, 'store'])
     ->name('question.store');

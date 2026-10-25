@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "MyCustomFont";
+    src: url("../fonts/fast99.ttf");
+}
+
+.font-custom {
+    font-family: "MyCustomFont";
+}

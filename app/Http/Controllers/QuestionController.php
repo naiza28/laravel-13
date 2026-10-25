@@ -27,12 +27,18 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-        $data['nama']       = $request->nama;
-        $data['email']      = $request->email;
+        $request->validate([
+            'nama' => 'required|max:10',
+            'email' => ['required', 'email'],
+            'pertanyaan' => 'required|max:300|min:8',
+        ]);
+
+        $data['nama'] = $request->nama;
+        $data['email'] = $request->email;
         $data['pertanyaan'] = $request->pertanyaan;
 
-        return view('home-question-respon', $data);
+        // Ganti return view dengan redirect
+        return redirect()->route('home')->with('info', 'Terimakasih ' . $request->nama . '! Pertanyaan ini: ' . $request->pertanyaan . ' akan segera direspon melalui email ' . $request->email);
     }
 
     /**
