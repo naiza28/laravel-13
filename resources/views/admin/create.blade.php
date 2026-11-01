@@ -392,16 +392,14 @@
                                     </div>
 
                                     <!-- Gender -->
+                                    <!-- Gender (di file create.blade.php) -->
                                     <div class="mb-3">
                                         <label for="gender" class="form-label">Gender</label>
                                         <select class="form-select mb-0" id="gender" name="gender"
-                                            aria-label="Gender select example">
-                                            <option selected>Gender</option>
-                                            <option value="Female"
-                                                {{ $dataPelanggan->gender == 'Female' ? 'selected' : '' }}>Female
-                                            </option>
-                                            <option value="Male"
-                                                {{ $dataPelanggan->gender == 'Male' ? 'selected' : '' }}>Male</option>
+                                            aria-label="Gender select example" required>
+                                            <option selected disabled>Pilih Gender</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Male">Male</option>
                                         </select>
                                     </div>
                                 </div>

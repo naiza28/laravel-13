@@ -363,6 +363,7 @@
         <div class="row">
             <div class="col-12 mb-4">
                 <div class="card border-0 shadow mb-4">
+                    
                     <div class="card-body">
                         <div class="table-responsive">
                             <table id="table-pelanggan" class="table table-centered table-nowrap mb-0 rounded">
@@ -398,6 +399,15 @@
                                                     </svg>
                                                     Edit
                                                 </a>
+                                                <form action="{{ route('pelanggan.destroy', $item->pelanggan_id) }}"
+                                                    method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm"
+                                                        onclick="return confirm('Yakin ingin menghapus data ini?')">
+                                                        Hapus
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

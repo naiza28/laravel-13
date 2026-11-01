@@ -54,4 +54,4 @@ Route::resource('pelanggan', PelangganController::class);
 
 Route::get('/pelanggan/{id}/edit', [PelangganController::class, 'edit'])->name('pelanggan.edit');
 
-
+Route::delete('/pelanggan/{id}', [PelangganController::class, 'destroy'])->name('pelanggan.destroy');
